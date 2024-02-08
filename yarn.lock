@@ -617,7 +617,7 @@
     "@radix-ui/react-use-layout-effect" "1.0.1"
     "@radix-ui/react-visually-hidden" "1.0.3"
 
-"@radix-ui/react-tooltip@^1.0.6":
+"@radix-ui/react-tooltip@^1.0.7":
   version "1.0.7"
   resolved "https://registry.yarnpkg.com/@radix-ui/react-tooltip/-/react-tooltip-1.0.7.tgz#8f55070f852e7e7450cc1d9210b793d2e5a7686e"
   integrity sha512-lPh5iKNFVQ/jav/j6ZrWq3blfDJ0OH9R6FlNUHPMqdLuQ9vwDgFsRxvl8b7Asuy5c8xmoojHUxKHQSOAvMHxyw==
@@ -940,39 +940,25 @@
     "@typescript-eslint/types" "6.19.0"
     eslint-visitor-keys "^3.4.1"
 
-"@uploadthing/dropzone@^0.1.1":
-  version "0.1.1"
-  resolved "https://registry.yarnpkg.com/@uploadthing/dropzone/-/dropzone-0.1.1.tgz#d84834e6f6c73ad22574055017bb4ca7bc45d0f3"
-  integrity sha512-ohlnFQfNr/UmImfipVo4uiBj1HQL7dp/sWBD96iAajc6RaQuYnHATGaSaISpCjZTeoLkksuu4/LR8vU9nSzpvQ==
-  dependencies:
-    attr-accept "^2.2.2"
-    file-selector "^0.6.0"
-
 "@uploadthing/mime-types@^0.2.2":
   version "0.2.2"
   resolved "https://registry.yarnpkg.com/@uploadthing/mime-types/-/mime-types-0.2.2.tgz#94ec59c61729f6bef5662d8b222831e8afd59369"
   integrity sha512-ZUo1JHOPPMZDsUw1mOhhVDIvJGlsjj6T0xJ/YJtulyJwL43S9B5pxg1cHcRuTEgjaxj7B55jiqQ6r9mDrrjH9A==
 
-"@uploadthing/react@^6.2.0":
-  version "6.2.0"
-  resolved "https://registry.yarnpkg.com/@uploadthing/react/-/react-6.2.0.tgz#412e1e01b49ee4e29a14e7c855632ed708a65cfc"
-  integrity sha512-DTD4R9OaVH/UDbs+J/s2UFMjNVQfHA+FCjAUEoa1JgTXQUfP8HvpOl8pCMcLqWx555e98bZrSgw50LjsOWGS0A==
+"@uploadthing/react@5.6.1":
+  version "5.6.1"
+  resolved "https://registry.yarnpkg.com/@uploadthing/react/-/react-5.6.1.tgz#04f08a24e96b678ea2dc1622ab054f511ba2efc8"
+  integrity sha512-uVd4I26OudpUcikobDFBMl9mG0vlhdXmK57oidCIrvfgNfKZOehpW+pqe1nUWE8HoYquJ1iK4OrmrfX8hOK2MA==
   dependencies:
-    "@uploadthing/dropzone" "^0.1.1"
-    "@uploadthing/shared" "^6.1.0"
+    "@uploadthing/shared" "^5.2.2"
     attr-accept "^2.2.2"
     file-selector "^0.6.0"
     tailwind-merge "^1.13.2"
 
-"@uploadthing/shared@^5.2.7":
+"@uploadthing/shared@^5.2.2", "@uploadthing/shared@^5.2.7":
   version "5.2.7"
   resolved "https://registry.yarnpkg.com/@uploadthing/shared/-/shared-5.2.7.tgz#a08108081070db6f66d874646773c46008e6a580"
   integrity sha512-gc+i66m0vPQpy5PC783iq1koE8Fm9lFTd3uPrJAr7kXwpNRteJs4dnu6etDkY8EilTjMFA6w4js/AhW8AUDuQg==
-
-"@uploadthing/shared@^6.1.0":
-  version "6.1.0"
-  resolved "https://registry.yarnpkg.com/@uploadthing/shared/-/shared-6.1.0.tgz#8c859b1ee9909ddf3f0747d2dea7b18e7e5b350c"
-  integrity sha512-pZNTqq/3QbAnLF6wRKAa9lM7MxdP057z3W3E6vZiHnhmwmdMllJpaVs3TWqe0wbSy6jcDDRLhDCuU/Vvr2KsZw==
 
 abbrev@1:
   version "1.1.1"
