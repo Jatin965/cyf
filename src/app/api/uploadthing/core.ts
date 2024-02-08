@@ -19,6 +19,8 @@ const middleware = async () => {
 
   const subscriptionPlan = await getUserSubscriptionPlan();
 
+  console.log("subscriptionPlan", subscriptionPlan);
+
   return { subscriptionPlan, userId: user.id };
 };
 
@@ -68,7 +70,7 @@ const onUploadComplete = async ({
     const { isSubscribed } = subscriptionPlan;
 
     const isProExceeded =
-      pagesAmt > PLANS.find((plan) => plan.name === "Pro")!.pagesPerPdf;
+      pagesAmt > PLANS.find((plan) => plan.name === "Premium")!.pagesPerPdf;
     const isFreeExceeded =
       pagesAmt > PLANS.find((plan) => plan.name === "Free")!.pagesPerPdf;
 
@@ -105,6 +107,7 @@ const onUploadComplete = async ({
       },
     });
   } catch (err) {
+    console.error("Error", err);
     await db.file.update({
       data: {
         uploadStatus: "FAILED",
