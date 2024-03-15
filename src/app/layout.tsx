@@ -19,7 +19,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <Providers>
         <body
           className={cn(
-            "min-h-screen font-sans antialiased grainy",
+            "min-h-screen font-sans antialiased grainy dark",
             inter.className
           )}
         >
