@@ -45,7 +45,7 @@ export function constructMetadata({
       creator: "@jatin7830",
     },
     icons,
-    metadataBase: new URL("https://cyf-jet.vercel.app"),
+    metadataBase: new URL("https://cyf-jzbt.vercel.app"),
     themeColor: "#FFF",
     ...(noIndex && {
       robots: {
