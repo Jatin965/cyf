@@ -19,8 +19,6 @@ const middleware = async () => {
 
   const subscriptionPlan = await getUserSubscriptionPlan();
 
-  console.log("subscriptionPlan", subscriptionPlan);
-
   return { subscriptionPlan, userId: user.id };
 };
 
@@ -48,13 +46,15 @@ const onUploadComplete = async ({
       key: file.key,
       name: file.name,
       userId: metadata.userId,
-      url: `https://utfs.io/f/${file.key}`,
+      url: `https://uploadthing-prod.s3.us-west-2.amazonaws.com/${file.key}`,
       uploadStatus: "PROCESSING",
     },
   });
 
   try {
-    const response = await fetch(`https://utfs.io/f/${file.key}`);
+    const response = await fetch(
+      `https://uploadthing-prod.s3.us-west-2.amazonaws.com/${file.key}`
+    );
 
     const blob = await response.blob();
 
@@ -68,7 +68,7 @@ const onUploadComplete = async ({
     const { isSubscribed } = subscriptionPlan;
 
     const isProExceeded =
-      pagesAmt > PLANS.find((plan) => plan.name === "Premium")!.pagesPerPdf;
+      pagesAmt > PLANS.find((plan) => plan.name === "Pro")!.pagesPerPdf;
     const isFreeExceeded =
       pagesAmt > PLANS.find((plan) => plan.name === "Free")!.pagesPerPdf;
 
@@ -85,7 +85,7 @@ const onUploadComplete = async ({
 
     // vectorize and index entire document
     const pinecone = await getPineconeClient();
-    const pineconeIndex = pinecone.Index("cyf");
+    const pineconeIndex = pinecone.Index("quill");
 
     const embeddings = new OpenAIEmbeddings({
       openAIApiKey: process.env.OPENAI_API_KEY,
@@ -105,7 +105,6 @@ const onUploadComplete = async ({
       },
     });
   } catch (err) {
-    console.error("Error", err);
     await db.file.update({
       data: {
         uploadStatus: "FAILED",
